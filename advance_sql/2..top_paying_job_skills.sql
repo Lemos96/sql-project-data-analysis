@@ -1,9 +1,6 @@
 /*
     Question:
         What are the skills required for these jobs?
-        What are the most in-demand skills for this role?
-        What are the top skills based on salary?
-        What are the mos optimal skills to learn?
 */
 
 WITH top_paying_job AS (
@@ -17,8 +14,7 @@ SELECT
     job_posted_date
 FROM
     job_postings_fact
-LEFT JOIN company_dim
-ON job_postings_fact.company_id = company_dim.company_id
+LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
 WHERE
     job_title_short = 'Data Analyst' AND
     job_location = 'Anywhere' AND
